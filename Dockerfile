@@ -21,7 +21,7 @@ LABEL summary="PiHole Exporter Docker image" \
       url="https://github.com/nlamirault/pihole_exporter" \
       maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
 
-RUN apk add --no-cache alpine-sdk bash
+RUN apk add --upgrade --no-cache alpine-sdk bash
 WORKDIR /go/src/github.com/nlamirault/pihole_exporter
 COPY . .
 RUN go build -o /app/pihole_exporter pihole_exporter.go && chmod +x /app/pihole_exporter
